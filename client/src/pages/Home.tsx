@@ -4,7 +4,6 @@ import {
   Check,
   ChevronRight,
   ExternalLink,
-  Github,
   Linkedin,
   Mail,
   MapPin,
@@ -20,51 +19,52 @@ const navItems = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Certifications", href: "#credentials" },
   { label: "Contact", href: "#contact" },
 ];
 
 const capabilities = [
-  "Application security",
-  "Manual security testing",
-  "OWASP Top 10 assessments",
-  "Threat analysis",
-  "Secure coding practices",
-  "Security monitoring",
-  "Vulnerability remediation",
-  "Full-stack development",
+  "Ethical Hacking",
+  "Network Defense",
+  "Threat Analysis",
+  "Threat Hunting",
+  "Incident Response",
+  "Security Monitoring",
+  "Vulnerability Assessment",
+  "Penetration Testing",
 ];
 
-const tools = ["React", "TypeScript", "Node.js", "Supabase", "Prisma", "AWS EC2", "Render", "OWASP", "Splunk", "Kali Linux", "Metasploit", "Nmap", "Burp Suite"];
+const tools = ["React", "TypeScript", "Tailwind CSS", "Node.js", "Supabase", "Prisma", "AWS EC2", "Render", "OWASP", "Splunk", "Kali Linux", "Metasploit", "Nmap", "Burp Suite"];
 
 const projects = [
   {
     number: "01",
-    title: "SIEM forwarder & security dashboard",
+    title: "Connect SIEM Forwarder to Kali and Creating Dashboard",
     category: "Security monitoring",
-    description: "Connected Kali Linux event sources to Splunk and built custom dashboards for real-time visibility into alerts, suspicious activity, and investigation context.",
-    stack: ["Splunk", "Kali Linux", "SIEM"],
+    description: "Comprehensive security monitoring solution collecting alerts and events from Kali Linux using Splunk SIEM tool. Implemented real-time threat detection and created custom dashboards for security event visualization and analysis.",
+    stack: ["Splunk", "Kali Linux", "SIEM", "Security Monitoring"],
   },
   {
     number: "02",
     title: "Restaurant Finder",
     category: "Full-stack application",
-    description: "A MERN application for restaurant search, filtering, reviews, and location-based recommendations, developed as a final year degree project.",
+    description: "Full-stack web application built with MERN stack as final year degree project. Features include restaurant search, filtering, user reviews, and location-based recommendations with responsive design.",
     stack: ["MongoDB", "Express.js", "React", "Node.js"],
   },
   {
     number: "03",
-    title: "Metasploitable 2 assessment",
+    title: "Metasploitable 2 Vulnerability Assessment",
     category: "Offensive security",
-    description: "Combined automated tooling and manual testing to identify vulnerabilities, validate exploitability, and document practical remediation recommendations.",
-    stack: ["Metasploit", "Nmap", "Burp Suite"],
+    description: "Comprehensive vulnerability assessment conducted on Metasploitable 2 Linux machine using both automated security tools and manual penetration testing techniques. Identified and documented security vulnerabilities with remediation recommendations.",
+    stack: ["Metasploit", "Nmap", "Burp Suite", "Vulnerability Assessment"],
   },
 ];
 
 const certifications = [
-  { title: "Cyber Security", issuer: "Spectrum Softtech Solutions", date: "Dec 2023", active: true },
-  { title: "React JS", issuer: "ICT Academy", date: "Aug 2022", active: true },
-  { title: "Bootstrap", issuer: "Logix Space Technology", date: "Feb 2023", active: true },
-  { title: "CEH", issuer: "RedTeam Hacker Academy", date: "In progress", active: false },
+  { title: "Cyber Security", issuer: "Spectrum Softtech Solutions", date: "Issued: December 2023", active: true },
+  { title: "React JS", issuer: "ICT Academy", date: "Issued: August 2022", active: true },
+  { title: "Bootstrap", issuer: "Logix Space Technology", date: "Issued: February 2023", active: true },
+  { title: "CEH", issuer: "RedTeam Hacker Academy", date: "", active: false },
 ];
 
 const reveal = {
@@ -118,15 +118,17 @@ export default function Home() {
         <section className="intro-section" id="about">
           <div className="container intro-grid">
             <motion.div className="intro-copy" initial="hidden" animate="visible" variants={reveal}>
-              <p className="eyebrow accent">Application Security Engineer</p>
+              <p className="eyebrow accent">About</p>
+              <p className="person-name">Udith Das K M</p>
+              <p className="role-label">Application Security Engineer</p>
               <h1>Building secure products from the <i>inside out.</i></h1>
-              <p className="intro-summary">I&apos;m Udith Das K M, a cybersecurity professional working across application security, ethical hacking, network defense, and secure product engineering.</p>
+              <p className="intro-summary">A proactive and results-driven cybersecurity professional with expertise in ethical hacking, network defense, and threat analysis. Dedicated to developing robust detection, prevention, and response strategies to protect digital assets.</p>
               <div className="intro-actions"><a className="button button-dark" href="#contact">Contact me <ArrowUpRight size={16} /></a><a className="text-link" href="mailto:udithdaskm@gmail.com">udithdaskm@gmail.com <ArrowUpRight size={14} /></a></div>
             </motion.div>
             <motion.aside className="profile-panel" initial="hidden" animate="visible" variants={{ ...reveal, visible: { ...reveal.visible, transition: { ...reveal.visible.transition, delay: 0.12 } } }}>
               <div className="profile-panel-top"><span className="availability"><span /> Available for selected opportunities</span><span className="profile-code">01 / 04</span></div>
               <div className="profile-portrait" aria-hidden="true"><span>UD</span></div>
-              <dl className="profile-details"><div><dt>Currently</dt><dd>Application Security Engineer<br />at Inker Robotics</dd></div><div><dt>Based in</dt><dd>Thrissur, Kerala<br />India</dd></div><div><dt>Approach</dt><dd>Understand the system.<br />Reduce the risk.</dd></div></dl>
+              <dl className="profile-details"><div><dt>Recent role</dt><dd>Application Security Engineer<br />at Inker Robotics</dd></div><div><dt>Based in</dt><dd>Thrissur, Kerala<br />India</dd></div><div><dt>Focus</dt><dd>Ethical hacking<br />Threat analysis</dd></div></dl>
             </motion.aside>
           </div>
           <div className="container intro-footer"><span>Scroll to explore</span><span className="footer-rule" /><span className="eyebrow">© 2025</span></div>
@@ -134,9 +136,9 @@ export default function Home() {
 
         <section className="content-section capabilities-section">
           <div className="container">
-            <SectionHeading number="01" eyebrow="Capabilities" title="Security work that connects the code to the real-world risk." />
+            <SectionHeading number="01" eyebrow="Skills" title="Security work that connects the code to the real-world risk." />
             <div className="capabilities-layout">
-              <motion.p className="section-lede" variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>My work sits at the intersection of engineering and security: finding practical weaknesses, explaining them clearly, and helping teams ship with better defaults.</motion.p>
+              <motion.p className="section-lede" variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>My work combines offensive and defensive security practices: finding practical weaknesses, explaining them clearly, and helping teams reduce their attack surface.</motion.p>
               <motion.div className="capability-list" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }}>
                 {capabilities.map((capability, index) => <motion.div className="capability-row" key={capability} variants={reveal}><span>{String(index + 1).padStart(2, "0")}</span><strong>{capability}</strong><ChevronRight size={17} /></motion.div>)}
               </motion.div>
@@ -149,14 +151,15 @@ export default function Home() {
           <div className="container">
             <SectionHeading number="02" eyebrow="Experience" title="A hands-on security practice, built around useful outcomes." />
             <motion.article className="experience-entry" variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-              <div className="experience-meta"><span>Sep 2025 — Present</span><span>Thrissur, Kerala</span></div>
-              <div className="experience-content"><div><p className="eyebrow accent">Inker Robotics</p><h3>Application Security Engineer</h3></div><div><p className="experience-description">Responsible for strengthening application security through secure coding practices and proactive security testing across confidential enterprise projects.</p><ul className="responsibility-list">{[
-                "Manual and automated application security testing, including discovery and exploitation validation.",
-                "Security assessments aligned with OWASP Top 10 standards.",
-                "Vulnerability documentation, remediation, and attack-surface reduction.",
-                "Secure full-stack development with React, TypeScript, Node.js, Supabase, and Prisma.",
-                "Hardened deployments on Render and AWS EC2 with security controls in the development lifecycle.",
-              ].map((item) => <li key={item}><Check size={15} /><span>{item}</span></li>)}</ul></div></div>
+              <div className="experience-meta"><span>September 2025 — June 2026</span><span>Thrissur, Kerala</span></div>
+              <div className="experience-content"><div><p className="eyebrow accent">Inker Robotics</p><h3>Application Security Engineer</h3></div><div><p className="experience-description">Responsible for strengthening application security through secure coding practices and proactive security testing. Working with confidential enterprise projects requiring strict security protocols.</p><p className="eyebrow responsibility-heading">Key responsibilities</p><ul className="responsibility-list">{[
+                "Conduct extensive manual and automated application security testing, including vulnerability discovery and exploitation validation.",
+                "Perform security assessments using multiple security tools and frameworks, ensuring alignment with OWASP Top 10 standards.",
+                "Identify, document, and remediate security vulnerabilities to reduce attack surfaces.",
+                "Develop and maintain full-stack applications using React, TypeScript, Tailwind CSS, Node.js, Supabase, and Prisma.",
+                "Successfully deployed secure production applications on Render and AWS EC2 with hardened configurations.",
+                "Integrate security controls into the development lifecycle.",
+              ].map((item) => <li key={item}><Check size={15} /><span>{item}</span></li>)}</ul></div></div><div className="experience-tools"><p className="eyebrow">Technologies &amp; tools</p><div>{tools.slice(0, 9).map((tool) => <span key={tool}>{tool}</span>)}</div></div>
             </motion.article>
           </div>
         </section>
@@ -170,8 +173,8 @@ export default function Home() {
 
         <section className="content-section tinted-section" id="credentials">
           <div className="container">
-            <SectionHeading number="04" eyebrow="Credentials" title="Continuing to sharpen the fundamentals." />
-            <div className="certification-grid">{certifications.map((cert) => <motion.article className="certification-card" key={cert.title} variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}><div className="certification-top"><ShieldCheck size={19} /><span className={cert.active ? "" : "pending"}>{cert.active ? "Completed" : "In progress"}</span></div><h3>{cert.title}</h3><p>{cert.issuer}</p><time>{cert.date}</time></motion.article>)}</div>
+            <SectionHeading number="04" eyebrow="Certifications" title="Continuing to sharpen the fundamentals." />
+            <div className="certification-grid">{certifications.map((cert) => <motion.article className="certification-card" key={cert.title} variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}><div className="certification-top"><ShieldCheck size={19} /><span className={cert.active ? "" : "pending"}>{cert.active ? "Completed" : "In progress"}</span></div><h3>{cert.title}</h3><p>{cert.issuer}</p>{cert.date && <time>{cert.date}</time>}</motion.article>)}</div>
           </div>
         </section>
 
@@ -180,7 +183,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="site-footer"><div className="container footer-inner"><span className="wordmark">UDITH <span>DKM</span></span><div className="footer-social"><a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub placeholder"><Github size={17} /></a><a href="https://www.linkedin.com/in/udithdas" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={17} /></a><span>Application security · Full-stack engineering</span></div></div></footer>
+      <footer className="site-footer"><div className="container footer-inner"><span className="wordmark">UDITH <span>DKM</span></span><div className="footer-social"><a href="https://www.linkedin.com/in/udithdas" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={17} /></a><span>© 2026 · Application security · Full-stack engineering</span></div></div></footer>
     </div>
   );
 }
